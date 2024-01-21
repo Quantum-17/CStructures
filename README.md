@@ -14,11 +14,13 @@ Size normalized to be a power of 2 at all times. This allows O(1) amortized resi
 
 Let the array originally have size n. After adding the n+1th element, 2n elements of memory are allocated and the first n elements are copied (using the in-built memcpy). Then the n+1th element is inserted. The next n-1 elements can be added for free, as there is extra space in the array. The resulting complexities are shown below:
 Copying: $O(\frac{n}{n+1}) = O(1)$ (amortized)
+
 Allocating: $O(\frac{2n}{n+1}) = O(1)$ (amortized)
 
 The ArrayList has random access to elements, and includes basic getter and setter methods. I have not included support for adding an element at a specific index or adding an array of elements at a specific index, however both of these can be easily implemented as needed. In the future, I will also implement a sorting method.
 
 **Hash Map**
+
 Probably the most useful and the most interesting data structure implemented here. My hashmap utilizes a universal hashing function to hash keys. I will show a proof sketch here:
 
-Suppose we have two 32 bit integers x, y labeled as: x31 -> x0, y31 -> y0, x != y. In order for h(x) = h(y), the last S bits must be equal to each other (as a result of the final modulo function), where 2^S is the size of the map. The probability of this happening is \frac{
+Suppose we have two 32 bit integers x, y labeled as: x31 -> x0, y31 -> y0, x != y. In order for h(x) = h(y), the last S bits must be equal to each other (as a result of the final modulo function), where 2^S is the size of the map. The probability of this happening is $\frac{{2^{32-S} \choose 2}}{{2^32 \choose 2}}$
