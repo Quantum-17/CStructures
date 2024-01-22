@@ -163,11 +163,7 @@ struct HashNode* newHashNode(int key, int val) {
 struct HashMap* newMap(int size) {
     int exp = (int) ceil(log2(size));
     struct HashMap* new = malloc(1*sizeof(struct HashMap));
-    if(exp < 14) {
-        (*new).size = 1 << (2*exp);
-    } else {
-        (*new).size = 1 << 28;
-    }
+    (*new).size = 1 << exp;
     (*new).nodes = calloc(((*new).size),sizeof(struct HashNode*));
     clock_t t = clock();
     srand((unsigned) t);
