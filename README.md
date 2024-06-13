@@ -1,9 +1,6 @@
 # CStructures
 Common Data Structures implemented in C
 
-**WHY?**
-I was told that C is not a great language for coding algorithm-heavy problems, as it didn't have any of the pre-implemented data structures that languages like C++/Python/Java do. However, I felt that this was a pretty poor excuse to not use my favorite language. So, in order to remedy this problem, I decided to just put those data structures in C myself!
-
 Notes about the ones that I included here:
 
 **Queue/Stack**
